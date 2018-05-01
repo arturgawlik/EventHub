@@ -10,11 +10,17 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 
 import {environment} from '../environments/environment';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { ContentComponent } from './content/content.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavBarComponent,
+    ContentComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
