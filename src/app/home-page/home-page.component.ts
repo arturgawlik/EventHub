@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {AuthService} from '../services/auth.service';
+import { THROW_IF_NOT_FOUND } from '@angular/core/src/di/injector';
 
 @Component({
   selector: 'app-home-page',
@@ -16,7 +17,7 @@ export class HomePageComponent implements OnInit {
 
   logout() {
     this.authService.logout();
-    this.router.navigate(['login']);
+    this.router.navigate(['Login']);
   }
 
 }

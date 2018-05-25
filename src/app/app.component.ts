@@ -22,7 +22,7 @@ export class AppComponent {
         this.isLoggedIn = false;
         this.user_displayName = '';
         this.user_email = '';
-        this.router.navigate(['login']);
+        this.router.navigate(['Login']);
       }
       else {
         // logged in

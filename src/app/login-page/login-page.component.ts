@@ -7,10 +7,10 @@ import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  templateUrl: './login-page.component.html',
+  styleUrls: ['./login-page.component.css']
 })
-export class LoginComponent  {
+export class LoginPageComponent  {
 
   constructor(public authService: AuthService, private router: Router) {
 

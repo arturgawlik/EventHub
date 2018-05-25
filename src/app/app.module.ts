@@ -10,7 +10,7 @@ import {environment} from '../environments/environment';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { ContentComponent } from './content/content.component';
 import { FooterComponent } from './footer/footer.component';
-import { LoginComponent } from './login/login.component';
+import { LoginPageComponent } from './login-page/login-page.component';
 import {AuthService} from './services/auth.service';
 import { HomePageComponent } from './home-page/home-page.component';
 import {AngularFireAuth} from 'angularfire2/auth';
@@ -18,7 +18,7 @@ import {AngularFireAuth} from 'angularfire2/auth';
 
 const routes: Routes = [
   {path: '', component: HomePageComponent},
-  {path: 'login', component: LoginComponent}
+  {path: 'Login', component: LoginPageComponent}
 ];
 
 @NgModule({
@@ -27,7 +27,7 @@ const routes: Routes = [
     NavBarComponent,
     ContentComponent,
     FooterComponent,
-    LoginComponent,
+    LoginPageComponent,
     HomePageComponent
   ],
   imports: [
