@@ -10,7 +10,6 @@ export class AuthService {
 
   }
 
-   test;
 
   loginWithGoogle() {
     return this.af.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
