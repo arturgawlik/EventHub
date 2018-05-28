@@ -14,6 +14,7 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import {AuthService} from './services/auth.service';
 import { HomePageComponent } from './home-page/home-page.component';
 import {AngularFireAuth} from 'angularfire2/auth';
+import { SearchComponent } from './search/search.component';
 
 
 const routes: Routes = [
@@ -28,7 +29,8 @@ const routes: Routes = [
     ContentComponent,
     FooterComponent,
     LoginPageComponent,
-    HomePageComponent
+    HomePageComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
