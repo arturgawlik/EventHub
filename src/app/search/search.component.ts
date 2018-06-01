@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { MeetupService } from '../services/meetup.service';
-import { ICity } from '../Interfaces/ICity';
 
 @Component({
   selector: 'app-search',
@@ -16,7 +15,6 @@ export class SearchComponent implements OnInit {
   selectedCity: any;
 
   ngOnInit(): void {
-   this.cities = this.meetup.getCities(); 
   }
 
 }
