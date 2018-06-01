@@ -1,6 +1,9 @@
-<div class="col-12">
-  <div class="col-12">
+<div class="ibox">
+  <div class="ibox-title">
+    Find Event
+  </div>
+  <div class="ibox-content">
     <label>City</label>
-    <ng-select [items]="people | async" bindLabel="company" placeholder="Select city" [(ngModel)]="selected"></ng-select>
+    <ng-select [items]="cities | async" bindLabel="City" placeholder="Select city" [(ngModel)]="selectedCity"></ng-select>
   </div>
 </div>

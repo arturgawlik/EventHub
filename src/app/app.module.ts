@@ -21,6 +21,7 @@ import { SearchComponent } from './search/search.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { FormsModule } from '@angular/forms';
+import { AddEventComponent } from './add-event/add-event.component';
 
 
 
@@ -38,6 +39,7 @@ const routes: Routes = [
     LoginPageComponent,
     HomePageComponent,
     SearchComponent,
+    AddEventComponent,
   ],
   imports: [
     BrowserModule,
