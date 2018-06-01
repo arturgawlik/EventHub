@@ -5,11 +5,13 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './add-event.component.html',
   styleUrls: ['./add-event.component.css']
 })
-export class AddEventComponent implements OnInit {
+export class AddEventComponent {
 
   constructor() { }
 
-  ngOnInit() {
+
+  onSubmit() {
+    console.log('submit!');
   }
 
 }
