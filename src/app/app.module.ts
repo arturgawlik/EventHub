@@ -27,7 +27,8 @@ import { AddEventComponent } from './add-event/add-event.component';
 
 const routes: Routes = [
   {path: '', component: HomePageComponent},
-  {path: 'Login', component: LoginPageComponent}
+  {path: 'Login', component: LoginPageComponent},
+  { path: 'AddEvent', component: AddEventComponent, data: { title: 'Add Event', fileName: 'add-event.component.ts' } },
 ];
 
 @NgModule({
