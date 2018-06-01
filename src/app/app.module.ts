@@ -25,9 +25,10 @@ import { AddEventComponent } from './add-event/add-event.component';
 
 
 
+
 const routes: Routes = [
-  {path: '', component: HomePageComponent},
-  {path: 'Login', component: LoginPageComponent},
+  { path: '', component: HomePageComponent },
+  { path: 'Login', component: LoginPageComponent },
   { path: 'AddEvent', component: AddEventComponent, data: { title: 'Add Event', fileName: 'add-event.component.ts' } },
 ];
 
@@ -48,7 +49,8 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     HttpClientModule,
     FormsModule,
-    NgSelectModule
+    NgSelectModule,
+    
   ],
   providers: [AuthService, AngularFireAuth, MeetupService],
   bootstrap: [AppComponent]
