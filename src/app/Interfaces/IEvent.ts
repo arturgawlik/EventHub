@@ -1,5 +1,6 @@
 export interface IEvent {
     name: string;
+    description: string;
     addDate: Date;
     startDate: Date;
     endDate: Date;

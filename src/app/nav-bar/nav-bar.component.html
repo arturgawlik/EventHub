@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+<!-- <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <a class="navbar-brand" href="#">EventHub</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
       aria-expanded="false" aria-label="Toggle navigation">
@@ -17,4 +17,24 @@
         <button class="btn btn-danger" (click)="logout()" style="margin-left: 10px;">Logout</button>
       </div>
     </div>
-  </nav>
+  </nav> -->
+
+<mat-tab-group>
+
+  <mat-tab label="Home">
+    <app-home-page></app-home-page>
+  </mat-tab>
+
+  <mat-tab label="New Event">
+    <app-add-event></app-add-event>
+  </mat-tab>
+
+  <mat-tab label="My Events">
+    <app-my-events></app-my-events>
+  </mat-tab>
+
+  <mat-tab label="All Events">
+    <app-all-events></app-all-events>
+  </mat-tab>
+
+</mat-tab-group>

@@ -24,10 +24,19 @@ import { FormsModule } from '@angular/forms';
 import { AddEventComponent } from './add-event/add-event.component';
 
 
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatButtonModule, MatCheckboxModule, MatNativeDateModule} from '@angular/material';
+import { MatTabsModule } from '@angular/material';
+import {MatCardModule} from '@angular/material/card';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { AllEventsComponent } from './all-events/all-events.component';
+import { MyEventsComponent } from './my-events/my-events.component';
 
 
 const routes: Routes = [
-  { path: '', component: HomePageComponent },
+  { path: '', component: NavBarComponent },
   { path: 'Login', component: LoginPageComponent },
   { path: 'AddEvent', component: AddEventComponent, data: { title: 'Add Event', fileName: 'add-event.component.ts' } },
 ];
@@ -42,6 +51,8 @@ const routes: Routes = [
     HomePageComponent,
     SearchComponent,
     AddEventComponent,
+    AllEventsComponent,
+    MyEventsComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +61,15 @@ const routes: Routes = [
     HttpClientModule,
     FormsModule,
     NgSelectModule,
-    
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatTabsModule,
+    MatCardModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [AuthService, AngularFireAuth, MeetupService],
   bootstrap: [AppComponent]
