@@ -23,8 +23,7 @@ export class AppComponent {
         this.user_displayName = '';
         this.user_email = '';
         this.router.navigate(['Login']);
-      }
-      else {
+      } else {
         // logged in
         this.isLoggedIn = true;
         this.user_displayName = auth.displayName;

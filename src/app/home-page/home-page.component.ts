@@ -5,8 +5,8 @@ import { THROW_IF_NOT_FOUND } from '@angular/core/src/di/injector';
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.css']
-})
-export class HomePageComponent{
+} )
+export class HomePageComponent implements OnInit {
 
   constructor() { }
 

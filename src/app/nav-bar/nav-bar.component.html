@@ -19,8 +19,10 @@
     </div>
   </nav> -->
 
+  <div>
+      <app-banner></app-banner>
+  </div>
 <mat-tab-group>
-
   <mat-tab label="Home">
       <app-all-events></app-all-events>
   </mat-tab>
@@ -34,10 +36,13 @@
   </mat-tab>
 
   <mat-tab label="Logout" (click)="logout()">
-    <button (click)="logout()">Logout</button>
+      <div class="centered"><p>Click to confirm:</p><button mat-raised-button color="primary" (click)="logout()">Logout</button></div>
   </mat-tab>
 
+      
+  
 </mat-tab-group>
+
 
 
 <!-- <button mat-button [matMenuTriggerFor]="menu">Menu</button>
