@@ -16,6 +16,7 @@ import {AuthService} from './services/auth.service';
 
 import { HomePageComponent } from './home-page/home-page.component';
 import {AngularFireAuth} from 'angularfire2/auth';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { SearchComponent } from './search/search.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgSelectModule } from '@ng-select/ng-select';
@@ -34,6 +35,7 @@ import { AllEventsComponent } from './all-events/all-events.component';
 import { MyEventsComponent } from './my-events/my-events.component';
 import {MatTableModule} from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material';
+import { EventDbService } from './services/event-db-service.service';
 
 
 const routes: Routes = [
@@ -73,9 +75,10 @@ const routes: Routes = [
     MatNativeDateModule,
     MatTableModule,
     MatPaginatorModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFireDatabaseModule
   ],
-  providers: [AuthService, AngularFireAuth],
+  providers: [AuthService, AngularFireAuth, EventDbService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

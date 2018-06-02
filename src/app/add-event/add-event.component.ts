@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { EventDbService } from '../services/event-db-service.service';
 
 @Component({
   selector: 'app-add-event',
@@ -10,7 +11,7 @@ export class AddEventComponent implements OnInit {
 
   addEventForm: FormGroup;
 
-  constructor() { }
+  constructor(private db: EventDbService) { }
 
   ngOnInit(): void {
     this.createForm();
@@ -18,6 +19,13 @@ export class AddEventComponent implements OnInit {
 
   onSubmit() {
     console.log(this.addEventForm.value);
+    console.log(this.addEventForm.valid);
+
+    if (this.addEventForm.valid) {
+      this.db.saveEvent(this.addEventForm.value);
+      this.addEventForm.reset();
+    }
+
   }
 
   private createForm(){
