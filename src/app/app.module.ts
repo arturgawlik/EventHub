@@ -13,14 +13,14 @@ import { FooterComponent } from './footer/footer.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 
 import {AuthService} from './services/auth.service';
-import {MeetupService} from './services/meetup.service';
 
 import { HomePageComponent } from './home-page/home-page.component';
 import {AngularFireAuth} from 'angularfire2/auth';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { SearchComponent } from './search/search.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgSelectModule } from '@ng-select/ng-select';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddEventComponent } from './add-event/add-event.component';
 
 
@@ -35,6 +35,7 @@ import { AllEventsComponent } from './all-events/all-events.component';
 import { MyEventsComponent } from './my-events/my-events.component';
 import {MatTableModule} from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material';
+import { EventDbService } from './services/event-db-service.service';
 import { BannerComponent } from './banner/banner.component';
 
 
@@ -75,9 +76,11 @@ const routes: Routes = [
     MatDatepickerModule,
     MatNativeDateModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    ReactiveFormsModule,
+    AngularFireDatabaseModule
   ],
-  providers: [AuthService, AngularFireAuth, MeetupService],
+  providers: [AuthService, AngularFireAuth, EventDbService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
