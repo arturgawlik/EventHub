@@ -17,7 +17,7 @@ export class AllEventsComponent implements OnInit {
   constructor() {
     // Create 100 users
     const users: UserData[] = [];
-    for (let i = 1; i <= 100; i++) { users.push(createNewUser(i)); }
+    for (let i = 1; i <= 10000; i++) { users.push(createNewUser(i)); }
 
     // Assign the data to the data source for the table to render
     this.dataSource = new MatTableDataSource(users);

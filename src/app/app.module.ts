@@ -13,7 +13,6 @@ import { FooterComponent } from './footer/footer.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 
 import {AuthService} from './services/auth.service';
-import {MeetupService} from './services/meetup.service';
 
 import { HomePageComponent } from './home-page/home-page.component';
 import {AngularFireAuth} from 'angularfire2/auth';
@@ -75,7 +74,7 @@ const routes: Routes = [
     MatTableModule,
     MatPaginatorModule
   ],
-  providers: [AuthService, AngularFireAuth, MeetupService],
+  providers: [AuthService, AngularFireAuth],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
