@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MeetupService } from '../services/meetup.service';
 
 @Component({
   selector: 'app-search',
@@ -8,7 +7,7 @@ import { MeetupService } from '../services/meetup.service';
 })
 export class SearchComponent implements OnInit {
 
-  constructor(private meetup: MeetupService) { }
+  constructor() { }
 
   cities: any = [];
 

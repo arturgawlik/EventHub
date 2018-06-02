@@ -7,23 +7,23 @@
     <form (ngSubmit)="onSubmit()">
       <div class="container">
         <mat-form-field>
-          <input matInput placeholder="Name">
+          <input matInput placeholder="Name" id="Name" name="name" required>
         </mat-form-field>
         <mat-form-field>
-            <textarea matInput placeholder="Description"></textarea>
+            <textarea matInput placeholder="Description" id="description" name="description" required></textarea>
           </mat-form-field>
         <mat-form-field>
-          <input matInput [matDatepicker]="picker1" placeholder="Start Date">
+          <input matInput [matDatepicker]="picker1" placeholder="Start Date" id="startDate" name="startDate" required>
           <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
           <mat-datepicker #picker1></mat-datepicker>
         </mat-form-field>
         <mat-form-field>
-            <input matInput [matDatepicker]="picker2" placeholder="End Date">
+            <input matInput [matDatepicker]="picker2" placeholder="End Date" id="endDate" name="endDate" required>
             <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
             <mat-datepicker #picker2></mat-datepicker>
         </mat-form-field>
         <mat-form-field>
-          <input matInput placeholder="Address">
+          <input matInput placeholder="Address" id="address" name="address" required>
         </mat-form-field>
         <button style="width: 100px;" mat-button type="submit">Add</button>
       </div>

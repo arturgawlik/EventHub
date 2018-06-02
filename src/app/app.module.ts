@@ -19,7 +19,7 @@ import {AngularFireAuth} from 'angularfire2/auth';
 import { SearchComponent } from './search/search.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgSelectModule } from '@ng-select/ng-select';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddEventComponent } from './add-event/add-event.component';
 
 
@@ -72,7 +72,8 @@ const routes: Routes = [
     MatDatepickerModule,
     MatNativeDateModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    ReactiveFormsModule
   ],
   providers: [AuthService, AngularFireAuth],
   bootstrap: [AppComponent]
