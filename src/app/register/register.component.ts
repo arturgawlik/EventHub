@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { AuthService } from '../core/auth.service';
+//import { AuthService } from '../core/auth.service';
 import { Router, Params } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -34,23 +35,23 @@ export class RegisterComponent {
    tryFacebookLogin() {
      this.authService.doFacebookLogin()
      .then(res => {
-       this.router.navigate(['/user']);
+       this.router.navigate(['']);
      }, err => console.log(err)
      );
    }
 
-   tryTwitterLogin() {
-     this.authService.doTwitterLogin()
-     .then(res => {
-       this.router.navigate(['/user']);
-     }, err => console.log(err)
-     );
-   }
+  //  tryTwitterLogin() {
+  //    this.authService.doTwitterLogin()
+  //    .then(res => {
+  //      this.router.navigate(['']);
+  //    }, err => console.log(err)
+  //    );
+  //  }
 
    tryGoogleLogin() {
      this.authService.doGoogleLogin()
      .then(res => {
-       this.router.navigate(['/user']);
+       this.router.navigate(['']);
      }, err => console.log(err)
      );
    }

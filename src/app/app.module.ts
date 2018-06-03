@@ -54,7 +54,7 @@ const routes: Routes = [
   { path: '', component: NavBarComponent },
   { path: 'Login', component: LoginPageComponent },
   { path: 'AddEvent', component: AddEventComponent, data: { title: 'Add Event', fileName: 'add-event.component.ts' } },
-  { path: 'register', component: RegisterComponent, canActivate: [AuthGuard] },
+  { path: 'register', component: RegisterComponent },
 ];
 
 @NgModule({
