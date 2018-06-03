@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 import { EventDbService } from '../services/event-db-service.service';
 import { IEvent } from '../Interfaces/IEvent';
 import { AuthService } from '../services/auth.service';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-add-event',
@@ -13,7 +14,7 @@ export class AddEventComponent implements OnInit {
 
   addEventForm: FormGroup;
 
-  constructor(private db: EventDbService, private fb: FormBuilder, private auth: AuthService) { }
+  constructor(private db: EventDbService, private fb: FormBuilder, private auth: AuthService, private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.createForm();
@@ -40,6 +41,9 @@ export class AddEventComponent implements OnInit {
 
       this.db.saveEvent(obj);
       this.rebuildForm();
+      this.snackBar.open('Done','Event has been added', {
+        duration: 3000,
+      });
     }
 
   }

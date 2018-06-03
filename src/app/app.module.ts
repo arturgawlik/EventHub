@@ -32,9 +32,9 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { AllEventsComponent } from './all-events/all-events.component';
-import { MyEventsComponent } from './my-events/my-events.component';
 import {MatTableModule} from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { EventDbService } from './services/event-db-service.service';
 import { BannerComponent } from './banner/banner.component';
 
@@ -68,7 +68,6 @@ const routes: Routes = [
     SearchComponent,
     AddEventComponent,
     AllEventsComponent,
-    MyEventsComponent,
     BannerComponent,
     UserComponent,
     RegComponent,
@@ -95,6 +94,7 @@ const routes: Routes = [
     AngularFireDatabaseModule,
     AngularFirestoreModule,
     AngularFireAuthModule,
+    MatSnackBarModule
   ],
   providers: [AuthService, AngularFireAuth, EventDbService, UserService, UserResolver, AuthGuard],
   bootstrap: [AppComponent]

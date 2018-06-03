@@ -47,7 +47,7 @@ export class RegComponent {
    tryFacebookLogin() {
     this.authService.doFacebookLogin()
     .then(res => {
-      this.router.navigate(['/user']);
+      this.router.navigate(['']);
     }, err => console.log(err)
     );
   }
@@ -55,7 +55,7 @@ export class RegComponent {
   tryGoogleLogin() {
     this.authService.doGoogleLogin()
     .then(res => {
-      this.router.navigate(['/user']);
+      this.router.navigate(['']);
     }, err => console.log(err)
     );
   }
