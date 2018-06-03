@@ -1,5 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
+import { EventDbService } from '../services/event-db-service.service';
+import { IEvent } from '../Interfaces/IEvent';
 
 @Component({
   selector: 'app-all-events',
@@ -8,20 +10,21 @@ import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 })
 export class AllEventsComponent implements OnInit {
 
-  displayedColumns = ['id', 'name', 'progress', 'color'];
-  dataSource: MatTableDataSource<UserData>;
+  displayedColumns = ['name', 'addDate', 'startDate', 'endDatew', 'userId', ''];
+  dataSource: MatTableDataSource<IEvent>;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor() {
-    // Create 100 users
-    const users: UserData[] = [];
-    for (let i = 1; i <= 10000; i++) { users.push(createNewUser(i)); }
+  // constructor(private db: EventDbService) {
+  //   // Create 100 users
+  //   //const events: IEvent[] = [];
+  //   let events = db.getAllEvents();
+  //   let eventsArr;
 
-    // Assign the data to the data source for the table to render
-    this.dataSource = new MatTableDataSource(users);
-  }
+  //   // Assign the data to the data source for the table to render
+  //   this.dataSource = new MatTableDataSource(events.subscribe(x => eventsArr = x));
+  // }
 
   ngOnInit() {
     this.dataSource.paginator = this.paginator;

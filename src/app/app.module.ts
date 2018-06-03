@@ -44,17 +44,17 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { UserComponent } from './user/user.component';
-import { RegisterComponent } from './register/register.component';
 import { UserResolver } from './user/user.resolver';
 import { AuthGuard } from './core/auth.guard';
 import { UserService } from './core/user.service';
+import { RegComponent } from './reg/reg.component';
 
 
 const routes: Routes = [
   { path: '', component: NavBarComponent },
   { path: 'Login', component: LoginPageComponent },
   { path: 'AddEvent', component: AddEventComponent, data: { title: 'Add Event', fileName: 'add-event.component.ts' } },
-  { path: 'register', component: RegisterComponent },
+  { path: 'reg', component: RegComponent },
 ];
 
 @NgModule({
@@ -70,8 +70,8 @@ const routes: Routes = [
     AllEventsComponent,
     MyEventsComponent,
     BannerComponent,
-    RegisterComponent,
     UserComponent,
+    RegComponent,
   ],
   imports: [
     BrowserModule,

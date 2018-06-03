@@ -20,9 +20,10 @@
   <app-banner></app-banner>
 </div>
 
-<mat-card style="width: 400px; margin-left: 40%"><p style="color: rgb(15, 13, 153)">Login with email or social account</p></mat-card>
+<mat-card style="width: 400px; margin-left: auto"><p style="color: rgb(15, 13, 153)">Login with email or social account</p>
 
-<div style="width: 20%; margin: 0 auto">
+<div style="margin: 0 auto">
+ <div class="container">
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
       <form [formGroup]="loginForm">
@@ -40,12 +41,12 @@
         </form>
     </div>
   </div>
-
-
-<mat-card style="width: 400px;">
-  <img mat-card-image src= assets\loginfb.png (click)="tryFacebookLogin()" style="cursor: pointer" >
-  <img mat-card-image src= assets\logingoogle.png (click)="tryGoogleLogin()" style="cursor: pointer" >
+</div>
+</div>
+<p></p>
+  <div style="width: 350px; margin-top: 80px; margin-left: 25px;"><img mat-card-image src= assets\loginfb.png (click)="tryFacebookLogin()" style="cursor: pointer" >
+  <img mat-card-image src= assets\logingoogle.png (click)="tryGoogleLogin()" style="cursor: pointer" ></div>
   
-  <p>No account yet? <a href="\Register">Create an account</a></p>
+  <p>No account yet? <a routerLink="/reg">Create an account</a></p>
 </mat-card>
 
