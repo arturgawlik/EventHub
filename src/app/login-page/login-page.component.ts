@@ -41,7 +41,7 @@ export class LoginPageComponent  {
   tryGoogleLogin() {
     this.authService.doGoogleLogin()
     .then((data) => {
-      this.router.navigate(['/user']);
+      this.router.navigate(['']);
     });
   }
 
