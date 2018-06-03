@@ -8,7 +8,7 @@ EventHub to Twoje narzędzie do poznawania nowych ludzi, podczas robienia tego c
 
 
 Linki:
--Repozytorium github:  https://github.com/arturgawlik/EventHub
+-Repozytorium github:  https://github.com/arturgawlik/EventHub <br>
 -System zarządzania Trello:  https://trello.com/b/pLCR6nx2/eventhub
 
 
