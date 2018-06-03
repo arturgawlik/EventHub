@@ -31,33 +31,6 @@ export class RegComponent {
      });
    }
 
-<<<<<<< HEAD:src/app/register/register.component.ts
-   tryFacebookLogin() {
-     this.authService.doFacebookLogin()
-     .then(res => {
-       this.router.navigate(['']);
-     }, err => console.log(err)
-     );
-   }
-
-  //  tryTwitterLogin() {
-  //    this.authService.doTwitterLogin()
-  //    .then(res => {
-  //      this.router.navigate(['']);
-  //    }, err => console.log(err)
-  //    );
-  //  }
-
-   tryGoogleLogin() {
-     this.authService.doGoogleLogin()
-     .then(res => {
-       this.router.navigate(['']);
-     }, err => console.log(err)
-     );
-   }
-
-=======
->>>>>>> 77e4116b37595eb522ab6a3b8db3ad538cf28299:src/app/reg/reg.component.ts
    tryRegister(value) {
      this.authService.doRegister(value)
      .then(res => {

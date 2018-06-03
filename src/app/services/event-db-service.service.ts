@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { IEvent } from '../Interfaces/IEvent';
 import { AngularFireDatabase } from 'angularfire2/database';
+import { Observable } from '@firebase/util';
 
 @Injectable()
 export class EventDbService {
@@ -21,11 +22,7 @@ export class EventDbService {
   }
 
   getAllEvents() {
-    let data = this.db.list(this.baseEventPath).valueChanges();
-
-    //let eventsParsed = JSON.parse(eventsJSON);
-
-    return data;
+    return this.db.list<IEvent>(this.baseEventPath).valueChanges();
   }
 
 }

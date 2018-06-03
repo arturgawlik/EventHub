@@ -26,13 +26,18 @@
         </ng-container>
 
         <!-- Name Column -->
-        <ng-container matColumnDef="startDate-endDate">
-          <mat-header-cell *matHeaderCellDef mat-sort-header> Start-End Date </mat-header-cell>
-          <mat-cell *matCellDef="let row"> {{row.startDate}} - {{row.endDate}} </mat-cell>
+        <ng-container matColumnDef="startDate">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Start Date </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.startDate}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="endDate">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> End Date </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.endDate}} </mat-cell>
         </ng-container>
 
         <!-- Color Column -->
-        <ng-container matColumnDef="color">
+        <ng-container matColumnDef="userId">
           <mat-header-cell *matHeaderCellDef mat-sort-header> Added by </mat-header-cell>
           <mat-cell *matCellDef="let row"> {{row.userId}} </mat-cell>
         </ng-container>
