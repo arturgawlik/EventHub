@@ -1,14 +1,14 @@
-import { Component } from '@angular/core';
-import { AuthService } from '../core/auth.service';
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../services/auth.service';
 import { Router, Params } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss']
+  selector: 'app-reg',
+  templateUrl: './reg.component.html',
+  styleUrls: ['./reg.component.css']
 })
-export class RegisterComponent {
+export class RegComponent {
 
   registerForm: FormGroup;
   // tslint:disable-next-line:no-inferrable-types
@@ -31,30 +31,6 @@ export class RegisterComponent {
      });
    }
 
-   tryFacebookLogin() {
-     this.authService.doFacebookLogin()
-     .then(res => {
-       this.router.navigate(['/user']);
-     }, err => console.log(err)
-     );
-   }
-
-   tryTwitterLogin() {
-     this.authService.doTwitterLogin()
-     .then(res => {
-       this.router.navigate(['/user']);
-     }, err => console.log(err)
-     );
-   }
-
-   tryGoogleLogin() {
-     this.authService.doGoogleLogin()
-     .then(res => {
-       this.router.navigate(['/user']);
-     }, err => console.log(err)
-     );
-   }
-
    tryRegister(value) {
      this.authService.doRegister(value)
      .then(res => {
@@ -67,5 +43,21 @@ export class RegisterComponent {
        this.successMessage = '';
      });
    }
+
+   tryFacebookLogin() {
+    this.authService.doFacebookLogin()
+    .then(res => {
+      this.router.navigate(['/user']);
+    }, err => console.log(err)
+    );
+  }
+
+  tryGoogleLogin() {
+    this.authService.doGoogleLogin()
+    .then(res => {
+      this.router.navigate(['/user']);
+    }, err => console.log(err)
+    );
+  }
 
 }
