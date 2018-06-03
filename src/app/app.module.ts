@@ -38,6 +38,19 @@ import { MatPaginatorModule } from '@angular/material';
 import { EventDbService } from './services/event-db-service.service';
 import { BannerComponent } from './banner/banner.component';
 
+//
+import { rootRouterConfig } from './app.routes';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+
+import { UserComponent } from './user/user.component';
+import { RegisterComponent } from './register/register.component';
+import { UserResolver } from './user/user.resolver';
+import { AuthGuard } from './core/auth.guard';
+import { UserService } from './core/user.service';
+
+
+
 
 const routes: Routes = [
   { path: '', component: NavBarComponent },
@@ -78,9 +91,11 @@ const routes: Routes = [
     MatTableModule,
     MatPaginatorModule,
     ReactiveFormsModule,
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    AngularFirestoreModule,
+    AngularFireAuthModule,
   ],
-  providers: [AuthService, AngularFireAuth, EventDbService],
+  providers: [AuthService, AngularFireAuth, EventDbService, UserService, UserResolver, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
