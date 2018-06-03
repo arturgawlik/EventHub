@@ -19,12 +19,15 @@
     </div>
   </nav> -->
 
-  <div>
-      <app-banner></app-banner>
-  </div>
+<div>
+  <app-banner></app-banner>
+</div>
+
+
+
 <mat-tab-group>
   <mat-tab label="Home">
-      <app-all-events></app-all-events>
+    <app-all-events></app-all-events>
   </mat-tab>
 
   <mat-tab label="New Event">
@@ -36,12 +39,21 @@
   </mat-tab>
 
   <mat-tab label="Logout" (click)="logout()">
-      <div class="centered"><p>Click to confirm:</p><button mat-raised-button color="primary" (click)="logout()">Logout</button></div>
+    <mat-card style="width: 400px; margin-left: auto,">
+      <p>Click to confirm:</p>
+      
+        <button mat-raised-button color="primary" (click)="logout()">Logout</button>
+      
+    </mat-card>
   </mat-tab>
 
-      
-  
+
+
 </mat-tab-group>
+
+
+
+
 
 
 
