@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormBuilder, AbstractControl } from '@angular/forms';
 import { EventDbService } from '../services/event-db-service.service';
 import { IEvent } from '../Interfaces/IEvent';
 import { AuthService } from '../services/auth.service';
@@ -40,7 +40,7 @@ export class AddEventComponent implements OnInit {
       }
 
       this.db.saveEvent(obj);
-      this.rebuildForm();
+      this.resetForm(this.addEventForm);
       this.snackBar.open('Done','Event has been added', {
         duration: 3000,
       });
@@ -60,6 +60,16 @@ export class AddEventComponent implements OnInit {
 
   private rebuildForm() {
     this.addEventForm.reset();
+  }
+
+  private resetForm(formGroup: FormGroup) {
+    let control: AbstractControl = null;
+    formGroup.reset();
+    formGroup.markAsUntouched();
+    Object.keys(formGroup.controls).forEach((name) => {
+      control = formGroup.controls[name];
+      control.setErrors(null);
+    });
   }
 
 }

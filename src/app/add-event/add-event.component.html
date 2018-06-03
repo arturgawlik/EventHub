@@ -7,23 +7,23 @@
     <form (ngSubmit)="onSubmit()" [formGroup]="addEventForm">
       <div class="container">
         <mat-form-field>
-          <input matInput formControlName="name" placeholder="Name" id="Name" name="name" required>
+          <input matInput formControlName="name" placeholder="Name" id="Name" name="name">
         </mat-form-field>
         <mat-form-field>
-            <textarea matInput formControlName="description" placeholder="Description" id="description" name="description" required></textarea>
+            <textarea matInput formControlName="description" placeholder="Description" id="description" name="description"></textarea>
           </mat-form-field>
         <mat-form-field>
-          <input matInput formControlName="startDate" [matDatepicker]="picker1" placeholder="Start Date" id="startDate" name="startDate" required>
+          <input matInput formControlName="startDate" [matDatepicker]="picker1" placeholder="Start Date" id="startDate" name="startDate">
           <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
           <mat-datepicker #picker1></mat-datepicker>
         </mat-form-field>
         <mat-form-field>
-            <input matInput formControlName="endDate" [matDatepicker]="picker2" placeholder="End Date" id="endDate" name="endDate" required>
+            <input matInput formControlName="endDate" [matDatepicker]="picker2" placeholder="End Date" id="endDate" name="endDate">
             <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
             <mat-datepicker #picker2></mat-datepicker>
         </mat-form-field>
         <mat-form-field>
-          <input matInput formControlName="address" placeholder="Address" id="address" name="address" required>
+          <input matInput formControlName="address" placeholder="Address" id="address" name="address">
         </mat-form-field>
         <button style="width: 100px;" mat-button type="submit">Add</button>
       </div>
