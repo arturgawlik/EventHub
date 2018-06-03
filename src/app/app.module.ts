@@ -39,7 +39,7 @@ import { EventDbService } from './services/event-db-service.service';
 import { BannerComponent } from './banner/banner.component';
 
 //
-import { rootRouterConfig } from './app.routes';
+// import { rootRouterConfig } from './app.routes';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
@@ -50,12 +50,11 @@ import { AuthGuard } from './core/auth.guard';
 import { UserService } from './core/user.service';
 
 
-
-
 const routes: Routes = [
   { path: '', component: NavBarComponent },
   { path: 'Login', component: LoginPageComponent },
   { path: 'AddEvent', component: AddEventComponent, data: { title: 'Add Event', fileName: 'add-event.component.ts' } },
+  { path: 'register', component: RegisterComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({
@@ -71,6 +70,8 @@ const routes: Routes = [
     AllEventsComponent,
     MyEventsComponent,
     BannerComponent,
+    RegisterComponent,
+    UserComponent,
   ],
   imports: [
     BrowserModule,

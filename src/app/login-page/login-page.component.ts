@@ -32,23 +32,23 @@ export class LoginPageComponent  {
 
   tryFacebookLogin() {
     this.authService.doFacebookLogin()
-    .then(res => {
-      this.router.navigate(['/user']);
+    .then((data) => {
+      this.router.navigate(['']);
     });
   }
 
 
   tryGoogleLogin() {
     this.authService.doGoogleLogin()
-    .then(res => {
+    .then((data) => {
       this.router.navigate(['/user']);
     });
   }
 
-  tryLogin(value) {
+    tryLogin(value) {
     this.authService.doLogin(value)
     .then(res => {
-      this.router.navigate(['/user']);
+      this.router.navigate(['']);
     }, err => {
       console.log(err);
       this.errorMessage = err.message;
