@@ -1,29 +1,43 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit, ViewChild, AfterViewInit} from '@angular/core';
 import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 import { EventDbService } from '../services/event-db-service.service';
 import { IEvent } from '../Interfaces/IEvent';
 import { DataSource } from '@angular/cdk/table';
 import { User } from 'firebase';
 import { Observable } from 'rxjs/Observable';
+import { merge } from 'rxjs/observable/merge';
+import {startWith} from 'rxjs/operators/startWith';
+import {switchMap} from 'rxjs/operators/switchMap';
+import {map} from 'rxjs/operators/map';
+import {catchError} from 'rxjs/operators/catchError';
+
+/**
+ * @title Table retrieving data through HTTP
+ */
 
 // @Component({
 //   selector: 'app-all-events',
 //   templateUrl: './all-events.component.html',
 //   styleUrls: ['./all-events.component.css']
 // })
-// export class AllEventsComponent implements OnInit {
-//   displayedColumns = ['name', 'addDate', 'startDate', 'endDatew', 'userId', ''];
+// export class AllEventsComponent implements OnInit, AfterViewInit {
+  
+//   resultsLength: any;
+//   isRateLimitReached: boolean;
+//   isLoadingResults: boolean;
+//   displayedColumns = ['name', 'addDate', 'startDate', 'endDate', 'address', 'userId'];
 //   dataSource: MatTableDataSource<IEvent>;
 //   @ViewChild(MatPaginator) paginator: MatPaginator;
 //   @ViewChild(MatSort) sort: MatSort;
-//   // constructor(private db: EventDbService) {
-//   //   // Create 100 users
-//   //   //const events: IEvent[] = [];
-//   //   let events = db.getAllEvents();
-//   //   let eventsArr;
-//   //   // Assign the data to the data source for the table to render
-//   //   this.dataSource = new MatTableDataSource(events.subscribe(x => eventsArr = x));
-//   // }
+//   events: Array<IEvent>;
+  
+//   constructor(private db: EventDbService) {
+
+//     db.getAllEvents().subscribe(events => this.events = events as IEvent[]);
+
+//     // Assign the data to the data source for the table to render
+//     this.dataSource = new MatTableDataSource<IEvent>(this.events);
+//   }
 //   ngOnInit() {
 //     this.dataSource.paginator = this.paginator;
 //     this.dataSource.sort = this.sort;
@@ -35,32 +49,10 @@ import { Observable } from 'rxjs/Observable';
 //     if (this.dataSource.paginator) {
 //       this.dataSource.paginator.firstPage();
 //     }
+
 //   }
 // }
-// /** Builds and returns a new User. */
-// function createNewUser(id: number): UserData {
-//   const name =
-//       NAMES[Math.round(Math.random() * (NAMES.length - 1))] + ' ' +
-//       NAMES[Math.round(Math.random() * (NAMES.length - 1))].charAt(0) + '.';
-//   return {
-//     id: id.toString(),
-//     name: name,
-//     progress: Math.round(Math.random() * 100).toString(),
-//     color: COLORS[Math.round(Math.random() * (COLORS.length - 1))]
-//   };
-// }
-// /** Constants used to fill up our data base. */
-// const COLORS = ['maroon', 'red', 'orange', 'yellow', 'olive', 'green', 'purple',
-//   'fuchsia', 'lime', 'teal', 'aqua', 'blue', 'navy', 'black', 'gray'];
-// const NAMES = ['Maia', 'Asher', 'Olivia', 'Atticus', 'Amelia', 'Jack',
-//   'Charlotte', 'Theodore', 'Isla', 'Oliver', 'Isabella', 'Jasper',
-//   'Cora', 'Levi', 'Violet', 'Arthur', 'Mia', 'Thomas', 'Elizabeth'];
-// export interface UserData {
-//   id: string;
-//   name: string;
-//   progress: string;
-//   color: string;
-// }
+
 
 
 @Component({
@@ -71,7 +63,8 @@ import { Observable } from 'rxjs/Observable';
 export class AllEventsComponent implements OnInit {
   
   dataSource = new EventDataSource(this.eventService);
-  displayedColumns = ['name', 'addDate', 'startDate', 'endDate', 'userId'];
+  displayedColumns = ['name', 'addDate', 'startDate', 'endDate', 'address', 'userId'];
+  
 
   constructor(private eventService: EventDbService) {}
 
