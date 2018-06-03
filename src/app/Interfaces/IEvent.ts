@@ -1,9 +1,9 @@
 export interface IEvent {
     name: string;
     description: string;
-    addDate: Date;
-    startDate: Date;
-    endDate: Date;
+    addDate: string;
+    startDate: string;
+    endDate: string;
     address: string;
     userId: string;
     arrives: number;

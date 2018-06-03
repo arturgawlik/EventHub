@@ -10,12 +10,10 @@ export class EventDbService {
   constructor(private db: AngularFireDatabase) { }
 
   public saveEvent(event: IEvent): boolean {
-    const obj = this.db.database.ref(this.basePath);
+    const dbObj = this.db.database.ref(this.basePath);
     
-    event.addDate = new Date();
-
+    let ref = dbObj.push(event);
     
-    obj.push(event);
     console.log('Success');
 
     return true;
